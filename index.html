@@ -9,23 +9,34 @@
   <body>
     <header>
       <h1>Memory game!</h1>
-      <p>
+      <p class="header-p">
         The goal of the game is to click on all squares only once! If you click
         on the same square twice, you loose!
       </p>
     </header>
     <main class="main-box">
       <div class="btn-box">
-        <button>Easy</button>
-        <button>Medium</button>
-        <button>Hard</button>
+        <button class="easy-mode">Easy</button>
+        <button class="medium-mode">Medium</button>
+        <button class="hard-mode">Hard</button>
       </div>
-      <div class="cubes"></div>
+      <div class="cubes">
+        <div class="cub"></div>
+        <div class="cub"></div>
+        <div class="cub"></div>
+        <div class="cub"></div>
+        <div class="cub"></div>
+        <div class="cub"></div>
+        <div class="cub"></div>
+        <div class="cub"></div>
+        <div class="cub"></div>
+      </div>
       <div class="clicked">
-        <p>
-          Squares clicked:<span class="starting-clicks">0</span>/<span
-            class="max-clicks"
-            >9</span
+        <p class="clicked-p">
+          Squares clicked:<span
+            ><span class="starting-clicks">0</span>/<span class="max-clicks"
+              >9</span
+            ></span
           >
         </p>
       </div>
