@@ -16,3 +16,32 @@ h1 {
   font-size: 28px;
   display: block;
 }
+/*MAIN BOX*/
+.main-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+/*BTN*/
+.btn-box {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+button {
+  padding: 20px 36px;
+  border-radius: 16px;
+  font-size: 20px;
+  border: none;
+  font-weight: 700;
+  color: #fff;
+  background-color: #2f58fe;
+  cursor: pointer;
+  width: 240px;
+  transition: 0.5s;
+}
+button:hover {
+  background-color: #0c0cfc;
+  scale: 1.1;
+  transition: 0.5s;
+}
