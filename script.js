@@ -9,3 +9,18 @@ let cubeNumber;
 addingNewObject(3);
 createGrid(3);
 //
+btnEasy.addEventListener('click', function (e) {
+  cubeNumber = e.target.value;
+  addingNewObject(cubeNumber);
+  createGrid(cubeNumber);
+});
+btnMedium.addEventListener('click', function (e) {
+  cubeNumber = e.target.value;
+  addingNewObject(cubeNumber);
+  createGrid(cubeNumber);
+});
+btnHard.addEventListener('click', function (e) {
+  cubeNumber = e.target.value;
+  addingNewObject(cubeNumber);
+  createGrid(cubeNumber);
+});
