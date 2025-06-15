@@ -50,14 +50,12 @@ button:hover {
   width: 350px;
   height: 280px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
   row-gap: 10px;
   column-gap: 10px;
 }
 .cub {
-  background-color: bisque;
   border-radius: 10px;
+  cursor: pointer;
 }
 /*CLICKED*/
 .clicked-p {
