@@ -41,3 +41,14 @@ function addingNewObject(number) {
     cubeArray.push(NewObject);
   }
 }
+function createGrid(size) {
+  cubes.innerHTML = '';
+  cubeArray.forEach(cube => {
+    cubes.innerHTML += `<div class="cub" id="${cube.id}"></div>`;
+    const cubeId = document.getElementById(cube.id);
+    cubeId.style.backgroundColor = cube.color;
+  });
+  cubes.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+  cubes.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+}
+//How to shuffle an array
