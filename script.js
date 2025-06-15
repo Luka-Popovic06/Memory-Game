@@ -24,3 +24,20 @@ btnHard.addEventListener('click', function (e) {
   addingNewObject(cubeNumber);
   createGrid(cubeNumber);
 });
+function addingNewObject(number) {
+  cubeArray = [];
+  for (let i = 0; i < number * number; i++) {
+    let red = Math.trunc(Math.random() * 255) + 1;
+    let blue = Math.trunc(Math.random() * 255) + 1;
+    let yellow = Math.trunc(Math.random() * 255) + 1;
+    let cubeColor = `RGB(${red}, ${blue}, ${yellow})`;
+
+    const NewObject = {
+      class: 'cub',
+      id: crypto.randomUUID(),
+      color: cubeColor,
+      isClicked: false, //dodao
+    };
+    cubeArray.push(NewObject);
+  }
+}
