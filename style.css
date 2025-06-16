@@ -53,7 +53,7 @@ button:hover {
   row-gap: 10px;
   column-gap: 10px;
 }
-.cub {
+.cube {
   border-radius: 10px;
   cursor: pointer;
 }

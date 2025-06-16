@@ -4,23 +4,29 @@ const cubes = document.querySelector('.cubes');
 const btnEasy = document.querySelector('.easy-mode');
 const btnMedium = document.querySelector('.medium-mode');
 const btnHard = document.querySelector('.hard-mode');
+const startingScore = document.querySelector('.starting-clicks');
+const maxClick = document.querySelector('.max-clicks');
 let cubeNumber;
+let score = 0;
 //
 addingNewObject(3);
 createGrid(3);
 //
 btnEasy.addEventListener('click', function (e) {
   cubeNumber = e.target.value;
+  maxClick.textContent = cubeNumber * cubeNumber;
   addingNewObject(cubeNumber);
   createGrid(cubeNumber);
 });
 btnMedium.addEventListener('click', function (e) {
   cubeNumber = e.target.value;
+  maxClick.textContent = cubeNumber * cubeNumber;
   addingNewObject(cubeNumber);
   createGrid(cubeNumber);
 });
 btnHard.addEventListener('click', function (e) {
   cubeNumber = e.target.value;
+  maxClick.textContent = cubeNumber * cubeNumber;
   addingNewObject(cubeNumber);
   createGrid(cubeNumber);
 });
@@ -33,10 +39,10 @@ function addingNewObject(number) {
     let cubeColor = `RGB(${red}, ${blue}, ${yellow})`;
 
     const NewObject = {
-      class: 'cub',
+      class: 'cube',
       id: crypto.randomUUID(),
       color: cubeColor,
-      isClicked: false, //dodao
+      isClicked: false,
     };
     cubeArray.push(NewObject);
   }
@@ -44,11 +50,21 @@ function addingNewObject(number) {
 function createGrid(size) {
   cubes.innerHTML = '';
   cubeArray.forEach(cube => {
-    cubes.innerHTML += `<div class="cub" id="${cube.id}"></div>`;
+    cubes.innerHTML += `<div class="${cube.class}" id="${cube.id}"></div>`;
     const cubeId = document.getElementById(cube.id);
     cubeId.style.backgroundColor = cube.color;
   });
   cubes.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
   cubes.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 }
-//How to shuffle an array
+
+cubes.addEventListener('click', function (e) {
+  const cube = e.target.closest('.cube');
+  if (e.target.closest('.cube')) {
+    const newCubeArray = cubeArray.find(c => c.id === cube.id);
+  }
+
+  shuffle(cubeArray);
+
+  createGrid();
+});
