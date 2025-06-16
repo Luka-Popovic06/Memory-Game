@@ -62,6 +62,20 @@ cubes.addEventListener('click', function (e) {
   const cube = e.target.closest('.cube');
   if (e.target.closest('.cube')) {
     const newCubeArray = cubeArray.find(c => c.id === cube.id);
+    if (newCubeArray.isClicked === false) {
+      newCubeArray.isClicked = true;
+      score++;
+      startingScore.textContent = score;
+      if (score === Number(maxClick.textContent)) {
+        alert('You win!!!!');
+        score = 0;
+        startingScore.textContent = score;
+      }
+    } else if (newCubeArray.isClicked === true) {
+      alert('You lose! Try again!');
+      score = 0;
+      startingScore.textContent = score;
+    }
   }
 
   shuffle(cubeArray);
