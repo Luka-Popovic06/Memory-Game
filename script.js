@@ -35,7 +35,12 @@ function addingNewObject(number) {
     cubeArray.push(NewObject);
   }
 }
-
+function coloringCubes() {
+  let red = Math.trunc(Math.random() * 255) + 1;
+  let blue = Math.trunc(Math.random() * 255) + 1;
+  let yellow = Math.trunc(Math.random() * 255) + 1;
+  cubeColor = `RGB(${red}, ${blue}, ${yellow})`;
+}
 function createGrid(size) {
   cubes.innerHTML = '';
   cubeArray.forEach(cube => {
